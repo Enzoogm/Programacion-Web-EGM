@@ -57,7 +57,7 @@ const nuevoArreglo = arreglo.map((item, index) => {
 });
 console.log("nuevo arreglo", nuevoArreglo);
 
-//filter Crea un nuebo array a partir de los elementos
+//filter Crea un nuebo array a parti de los elementos
 //que cumplan la condicion
 
 const arregloNum = [2,4,5,6]
