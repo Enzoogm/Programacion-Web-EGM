@@ -1,6 +1,6 @@
 const hardcodedUser = {
-  username: "Papu",
-  password: "Papurry",
+  username: "DylanGay",
+  password: "SoyGaysoyDylan",
 };
 
 document.getElementById("login-button").addEventListener("click", function () {
@@ -47,7 +47,6 @@ function fetchEmployees() {
     .catch((error) => console.error("Error fetching employees:", error));
 }
 
-// Cerrar sesión
 document.getElementById("logout-button").addEventListener("click", function () {
   sessionStorage.removeItem("loggedIn");
   location.reload();
