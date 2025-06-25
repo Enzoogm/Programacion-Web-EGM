@@ -1,35 +1,30 @@
 import "./App.css";
-import Pepito from "./components/usuario/Usuario";
-import { Provedor } from "./components/proveedor/Provedor";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  //     variable   |funcion Actualizadora     |valor inicial
-  const [characters, setCharacters] = useState([]);
+  const [nombre, setNombre] = useState("");
 
-  //useEffect va  ajaecutar el codigo que se encuentra
-  //dentro, tantas veces como se actualicen sus dependencias
-  //si no hay depenceidas se ejecutan solo antes del primer
-  //rederizado
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((data) => data.json())
-      .then((response) => setCharacters(response.results));
-  }, []);
+  //Siempre que hagamos unevento el evento se va a llamar handle
+  const handleClick = () => {
+    console.log(nombre);
+  };
 
+  const handleInputChange = (event) => {
+    setNombre(event.target.value);
+    //para capturar el valor de un input se usa el target.value
+  };
   return (
     <>
-      {characters ? (
-        characters.map((item, index) => <p>{item.name}</p>)
-      ) : (
-        <>Cargando...</>
-      )}
-      hola mundo
-      <button>Pe</button>
-      <Pepito />
-      <Provedor name={"Ricardo"} />
+      <input
+        type="text"
+        placeholder="Escribi tu nombre"
+        onChange={handleInputChange}
+        value={nombre}
+      />
+      <button onClick={handleClick}>Mostrar</button>
+      {nombre && <h2>{nombre}</h2>}
+      {nombre === "" ? <>hola</> : <>chau</>}
     </>
   );
 }
-
 export default App;
