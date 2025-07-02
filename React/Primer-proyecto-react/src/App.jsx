@@ -1,30 +1,14 @@
 import "./App.css";
-import { useState } from "react";
+// import Actividad1 from "./Ejercicio1/Actividad1";
+import Actividad2 from "./Ejercicios/Actividad2";
 
 function App() {
-  const [nombre, setNombre] = useState("");
-
-  //Siempre que hagamos unevento el evento se va a llamar handle
-  const handleClick = () => {
-    console.log(nombre);
-  };
-
-  const handleInputChange = (event) => {
-    setNombre(event.target.value);
-    //para capturar el valor de un input se usa el target.value
-  };
   return (
-    <>
-      <input
-        type="text"
-        placeholder="Escribi tu nombre"
-        onChange={handleInputChange}
-        value={nombre}
-      />
-      <button onClick={handleClick}>Mostrar</button>
-      {nombre && <h2>{nombre}</h2>}
-      {nombre === "" ? <>hola</> : <>chau</>}
-    </>
+    <div className="App">
+      {/* <Actividad1 /> */}
+      <Actividad2 />
+    </div>
   );
 }
+
 export default App;
